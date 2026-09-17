@@ -1,0 +1,42 @@
+# ============================================================
+# Ignore everything except my assigned work.
+#
+# The full XAMPP project stays on disk so the app still runs.
+# Only schema / data-dictionary artifacts are tracked and
+# pushed for teammates B and C to build against.
+#
+# Pattern notes:
+#   - Use /* (not *) so Git only ignores root-level entries.
+#     A bare * would also ignore files inside folders we
+#     un-ignore below, including nested subdirectories.
+#   - Un-ignoring a folder (e.g. !/sql/) is enough for Git
+#     to track that folder's files AND its subdirectories.
+# ============================================================
+
+# Ignore every file and folder at the repository root
+/*
+
+# Always keep this file
+!.gitignore
+
+# ------------------------------------------------------------
+# Schema (sql/schema.sql and any nested SQL docs)
+# ------------------------------------------------------------
+!/sql/
+
+# ------------------------------------------------------------
+# Data dictionary summary + documented table/column names
+# for B and C. Track docs/ (including nested subfolders)
+# and common dictionary filenames if they live at repo root.
+# ------------------------------------------------------------
+!/docs/
+!/DATA_DICTIONARY.md
+!/data_dictionary.md
+!/data-dictionary.md
+!/data_dictionary.txt
+!/DATA_DICTIONARY.txt
+!/data_dictionary.sql
+!/tables.md
+!/TABLES.md
+!/schema.md
+!/schema.sql
